@@ -6,7 +6,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
         <script src="app.js" defer></script>
-        <script src="config.js" defer></script>
     </head>
     <body>
         <div id="main-container">
@@ -117,9 +116,15 @@
                     </div>
                     <div class="ui-car-altitude-bg" v-if="showAltitude">
                         <svg width='100' height='100'><circle cx='50' cy='50' r='27' stroke='white' stroke-opacity="50%" stroke-width='6' fill='transparent' stroke-dasharray="200 45" stroke-dashoffset="180"/></svg>
-                    </div> 
+                    </div>
                 </div> 
                 </div>
+                    <div class="border">
+                        <div class="square" v-if="showSquare">
+                    </div>
+                    <div class="border">
+                        <div class="circle" v-if="showCircle">
+                    </div>
             </div>
         </div>
     </body>
