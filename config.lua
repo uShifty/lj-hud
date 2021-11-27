@@ -8,6 +8,7 @@ Config.dynamicOxygen = true -- True or false, set to false if you want it persis
 Config.dynamicEngine = true -- True or false, set to false if you want it persistent
 Config.dynamicNitro = true -- True or false, set to false if you want it persistent
 
+Config.ShowMapBorders = true -- True or false, set to false if you don't want map borders
 Config.ShowMapNotif = true -- True or false, set to false if you don't want loading notifications when map changes shape
 Config.StressChance = 0.1 -- Default: 10% -- Percentage Stress Chance When Shooting (0-1)
 Config.UseMPH = true -- If true speed math will be done as MPH, if false KPH will be used
