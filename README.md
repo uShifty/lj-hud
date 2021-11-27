@@ -16,7 +16,7 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
 
 # Installation
-* **IMPORTANT: If you're using [lj-fuel](https://github.com/loljoshie/lj-fuel) you NEED to change FuelExport in config to lj-fuel**
+* **IMPORTANT: If you're using [lj-fuel](https://github.com/loljoshie/lj-fuel) you NEED to change LegacyFuel exports**
 
 ## qb-smallresources
 * find **"qb-smallresources/client/seatbelt.lua"**
