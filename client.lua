@@ -12,8 +12,8 @@ local dynamicNitro = false
 local speedMultiplier = config.UseMPH and 2.23694 or 3.6
 local seatbeltOn = false
 local cruiseOn = false
-local showaltitude = false
-local showseatbelt = false
+local showAltitude = false
+local showSeatbelt = false
 local nos = 0
 local stress = 0
 local hunger = 100
@@ -43,7 +43,7 @@ RegisterNetEvent("hud:client:EngineHealth", function(newEngine)
 end)
 
 RegisterNetEvent('hud:client:ToggleAirHud', function()
-    showaltitude = not showaltitude
+    showAltitude = not showAltitude
 end)
 
 RegisterNetEvent('hud:client:UpdateNeeds', function(newHunger, newThirst) -- Triggered in qb-core
@@ -56,7 +56,7 @@ RegisterNetEvent('hud:client:UpdateStress', function(newStress) -- Add this even
 end)
 
 RegisterNetEvent('hud:client:ToggleShowSeatbelt', function()
-    showseatbelt = not showseatbelt
+    showSeatbelt = not showSeatbelt
 end)
 
 RegisterNetEvent('seatbelt:client:ToggleSeatbelt', function() -- Triggered in smallresources
@@ -167,7 +167,7 @@ local function updatePlayerHud(data)
     end
 end
 
-local prevVehicleStats = { nil, nil, nil, nil, nil, nil, nil, nil }
+local prevVehicleStats = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
 
 local function updateVehicleHud(data)
     local shouldUpdate = false
@@ -184,8 +184,10 @@ local function updateVehicleHud(data)
             speed = data[4],
             fuel = data[5],
             altitude = data[6],
-            showaltitude = data[7],
-            showseatbelt = data[8],
+            showAltitude = data[7],
+            showSeatbelt = data[8],
+            showSquareB = data[9],
+            showCircleB = data[10],
         })
     end
 end
@@ -317,8 +319,8 @@ CreateThread(function()
             -- vehcle hud
             local vehicle = GetVehiclePedIsIn(player)
             if IsPedInAnyHeli(player) or IsPedInAnyPlane(player) then
-                showaltitude = true
-                showseatbelt = false
+                showAltitude = true
+                showSeatbelt = false
             end
             if IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
                 if not wasInVehicle then
@@ -370,11 +372,16 @@ CreateThread(function()
                     math.ceil(GetEntitySpeed(vehicle) * speedMultiplier),
                     getFuelLevel(vehicle),
                     math.ceil((GetEntityCoords(player).z *.5)),
-                    showaltitude,
-                    showseatbelt,
+                    showAltitude,
+                    showSeatbelt,
+                    showSquareB,
+                    showCircleB,
                 })
-                showaltitude = false
-                showseatbelt = true
+                showAltitude = false
+                showSeatbelt = true
+                Wait(500)
+                SetRadarZoom(1000)
+                SetRadarBigmapEnabled(false, false)
             else
                 if wasInVehicle then
                     wasInVehicle = false
@@ -423,7 +430,7 @@ RegisterNetEvent("hud:client:ChangeSquare", function()
         if not HasStreamedTextureDictLoaded("squaremap") then
             Wait(500)
         end
-        if Config.ShowMapNotif == true then
+        if config.ShowMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Square map loading...')
         end
             SetMinimapClipType(0)
@@ -447,8 +454,12 @@ RegisterNetEvent("hud:client:ChangeSquare", function()
             SetMinimapClipType(0)
             Wait(500)
             SetRadarBigmapEnabled(false, false)
+        if config.ShowMapBorders == true then
+            showSquareB = true
+            showCircleB = false
+        end
             Wait(1200)
-        if Config.ShowMapNotif == true then
+        if config.ShowMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Square map loaded!')
         end
 end)
@@ -458,7 +469,7 @@ RegisterNetEvent("hud:client:ChangeCircle", function()
         if not HasStreamedTextureDictLoaded("circlemap") then
             Wait(500)
         end
-        if Config.ShowMapNotif == true then
+        if config.ShowMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Circle map loading...')
         end
             SetMinimapClipType(1)
@@ -482,10 +493,15 @@ RegisterNetEvent("hud:client:ChangeCircle", function()
             SetRadarBigmapEnabled(true, false)
             Wait(500)
             SetRadarBigmapEnabled(false, false)
+        if config.ShowMapBorders == true then
+            showSquareB = false
+            showCircleB = true
+        end
             Wait(1200)
-        if Config.ShowMapNotif == true then
+        if config.ShowMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Circle map loaded!')
         end
+
 end)
 
 -- Money HUD
