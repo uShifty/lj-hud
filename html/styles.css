@@ -155,3 +155,31 @@
   transform: translateX(20px);
   opacity: 0;
 }
+
+.border {
+  bottom: 7.9%;
+  left: 1.3%;
+  width: 0%;
+  text-align: center;
+}
+
+.square {
+  bottom: 6.30%;
+  left: 28px;
+  width: 29vh;
+  height: 18.5vh;
+  border: 4px solid #bababa;
+  position: absolute;
+  display: inline-block;
+}
+
+.circle {
+  bottom: 6.9%;
+  left: 41px;
+  width: 27vh;
+  height: 22.9vh;
+  border: 4px solid #bababa;
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+}
