@@ -15,6 +15,9 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
 
+# Video Guide Installation
+* [**[QBCore] lj-hud - Video Installation Guide**](https://youtu.be/_StJooDVGC8)
+
 # Installation
 * **IMPORTANT: If you're using [lj-fuel](https://github.com/loljoshie/lj-fuel) you NEED to change LegacyFuel exports**
 
