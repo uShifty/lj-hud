@@ -363,9 +363,12 @@ const vehHud = {
       fuel: 0,
       speed: 0,
       seatbelt: 0,
+      showSquareB: 0,
       show: false,
       showAltitude: true,
       showSeatbelt: true,
+      showSquare: false,
+      showCircle: false,
       seatbeltColor: "",
     };
   },
@@ -386,8 +389,10 @@ const vehHud = {
       this.speed = data.speed;
       this.altitude = data.altitude;
       this.fuel = (data.fuel * 0.67);
-      this.showseatbelt = data.showseatbelt;
-      this.showaltitude = data.showaltitude;
+      this.showSeatbelt = data.showSeatbelt;
+      this.showAltitude = data.showAltitude;
+      this.showSquareB = data.showSquareB;
+      this.showCircleB = data.showCircleB;
       if (data.seatbelt === true) {
         this.seatbelt = 1;
         this.seatbeltColor = "transparent";
@@ -395,12 +400,12 @@ const vehHud = {
         this.seatbelt = 0;
         this.seatbeltColor = "#FF5100";
       }
-      if (data.showseatbelt === true) {
+      if (data.showSeatbelt === true) {
         this.showSeatbelt = true;
       } else {
         this.showSeatbelt = false;
       }
-      if (data.showaltitude === true) {
+      if (data.showAltitude === true) {
         this.showAltitude = true;
       } else {
         this.showAltitude = false;
@@ -411,6 +416,16 @@ const vehHud = {
         this.fuelColor = "#dd6e14";
       } else {
         this.fuelColor = "#FFFFFF";
+      }
+      if (data.showSquareB === true) {
+        this.showSquare = true;
+      } else {
+        this.showSquare = false;
+      }
+      if (data.showCircleB === true) {
+        this.showCircle = true;
+      } else {
+        this.showCircle = false;
       }
       if (data.isPaused === 1) {
         this.show = false;
