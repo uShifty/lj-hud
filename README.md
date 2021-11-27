@@ -1,6 +1,6 @@
 ![LJ HUD](https://user-images.githubusercontent.com/91661118/143670558-cbd7b923-1fbe-4ac1-86f5-72c518937b85.png)
 
-# lj-hud used with QBCore Framework
+# 🎅🎄🎁 lj-hud used with QBCore Framework 🍪🦌🤶
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
 https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
