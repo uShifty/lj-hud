@@ -574,7 +574,7 @@ CreateThread(function() -- Shooting
             local ped = PlayerPedId()
             local weapon = GetSelectedPedWeapon(ped)
             if weapon ~= `WEAPON_UNARMED` then
-                if IsPedShooting(ped) and not IsWhitelistedWeapon(weapon) then
+                if IsPedShooting(ped) and not IsWhitelistedWeaponStress(weapon) then
                     if math.random() < config.StressChance then
                         TriggerServerEvent('hud:server:GainStress', math.random(1, 3))
                     end
