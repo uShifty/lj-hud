@@ -303,7 +303,7 @@ const playerHud = {
       }
 
       if (data.talking && data.radio) {
-        this.talkingColor = "#ff0000";
+        this.talkingColor = "#D64763";
       } else if (data.talking) {
         this.talkingColor = '#FFFF00';
       } else {
