@@ -150,6 +150,7 @@ const playerHud = {
       talkingColor: "#FFFFFF",
       nosColor: "",
       engineColor: "",
+      armorColor: "",
       hungerColor: "",
       healthColor: "",
       thirstColor: "",
@@ -192,6 +193,7 @@ const playerHud = {
       this.dev = data.dev;
       this.playerDead = data.playerDead;
       this.dynamicHealth = data.dynamicHealth;
+      this.dynamicArmor = data.dynamicArmor;
       this.dynamicHunger = data.dynamicHunger;
       this.dynamicThirst = data.dynamicThirst;
       this.dynamicStress = data.dynamicStress;
@@ -213,6 +215,22 @@ const playerHud = {
       } else {
         this.healthColor = "#ff0000";
         this.health = 100;
+      }
+
+      if (data.dynamicArmor == true) {
+        if (data.armor == 0) {
+          this.showArmor = false; 
+        }  else {
+            this.showArmor = true;
+          }
+      } else if (data.dynamicArmor == false){
+        this.showArmor = true;
+      } 
+
+      if (data.armor <= 0) {
+        this.armorColor = "#FF0000";
+      } else {
+        this.armorColor = "#326dbf";
       }
 
       if (data.dynamicHunger == true) {
