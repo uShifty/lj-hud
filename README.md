@@ -91,6 +91,8 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.1
+* CSS changes on stress and parachute
+* Added dynamic armor
 * Fixed map not displaying while idle in vehicle
 * Added border option found in config.lua
 * Added more optimization
