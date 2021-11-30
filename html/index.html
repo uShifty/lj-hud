@@ -29,39 +29,39 @@
                 <div id="playerHud" v-show="show">
                     <div v-if="showVoice">
                         <q-circular-progress class="q-ml-xs" show-value :value="voice" size="49px" :thickness="0.25" :style="{color: talkingColor}" :min="0" :max="5" center-color="grey-10"><q-icon :name="voiceIcon" size="19.5px" :style="{color: talkingColor}"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -18px;" :value="static" size="49px" :thickness="0.25" :style="{color: talkingColor}" :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25" :style="{color: talkingColor}" :min="0" :max="100">
                     </div>
                     <div v-if="showHealth">
                         <q-circular-progress class="q-ml-xs" show-value :value="health" size="49px" :thickness="0.25" :style="{color: healthColor}" center-color="grey-10"><q-icon name="fas fa-heart" size="19.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -18px;" :value="static" size="49px" :thickness="0.25" :style="{color: healthColor}" :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25" :style="{color: healthColor}" :min="0" :max="100">
                     </div>
                     <div v-if="showArmor">
-                        <q-circular-progress class="q-ml-xs" show-value :value="armor" size="49px" :thickness="0.25" color="armor"  center-color="grey-10"><q-icon name="fas fa-shield-alt" size="19.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="position: absolute; opacity: 100%; bottom: -14px; left: -19px; z-index: -1;" :value="static" size="49px" :thickness="0.25" color="armor-bg" :min="0" :max="100"></q-circular-progress>
+                        <q-circular-progress class="q-ml-xs" show-value :value="armor" size="49px" :thickness="0.25" :style="{color: armorColor}" center-color="grey-10"><q-icon name="fas fa-shield-alt" size="19.5px" color="white"/>
+                        <q-circular-progress class="q-ml-xs" style="position: absolute; opacity: 30%; bottom: -14px; left: -19px; z-index: -1;" :value="static" size="49px" :thickness="0.25" :style="{color: armorColor}" :min="0" :max="100"></q-circular-progress>
                     </div>
                     <div v-if="showHunger">
                         <q-circular-progress class="q-ml-xs" show-value :value="hunger" size="49px" :thickness="0.25" :style="{color: hungerColor}"  center-color="grey-10"><q-icon name="fas fa-hamburger" size="19.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -18px; " :value="static" size="49px" :thickness="0.25" :style="{color: hungerColor}"  :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px; " :value="static" size="49px" :thickness="0.25" :style="{color: hungerColor}"  :min="0" :max="100">
                     </div>
                     <div v-if="showThirst">
                         <q-circular-progress class="q-ml-xs" show-value :value="thirst" size="49px" :thickness="0.25" :style="{color: thirstColor}" center-color="grey-10"><q-icon name="fas fa-tint" size="19.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -18px;" :value="static" size="49px" :thickness="0.25"  :style="{color: thirstColor}"  :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25"  :style="{color: thirstColor}"  :min="0" :max="100">
                     </div>
                     <div v-if="showStress">
                         <q-circular-progress class="q-ml-xs" show-value :value="stress" size="49px" :thickness="0.25" color="stress"  center-color="grey-10"><q-icon name="fas fa-brain" size="19.5px" color="white"/>
                         <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="stress" :min="0" :max="100">
                     </div>
                     <div v-if="showOxygen">
-                        <q-circular-progress class="q-ml-xs" show-value :value="oxygen" size="49px" :thickness="0.25" color="oxygen"  center-color="grey-10"><q-icon name="fas fa-lungs" size="18.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="oxygen" :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" show-value :value="oxygen" size="49px" :thickness="0.25" color="oxygen"  center-color="grey-10"><q-icon style="top: -2px;" name="fas fa-lungs" size="19px" color="white"/>
+                        <q-circular-progress class="q-ml-xs" style="position: absolute; opacity: 30%; bottom: -17px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="oxygen" :min="0" :max="100">
                     </div>
                     <div v-if="showArmed">
                         <q-circular-progress class="q-ml-xs" show-value :value="static" size="49px" :thickness="0.25" color="armed"  center-color="grey-10"><q-icon name="fas fa-bars" size="18.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 35px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="armed" :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 34px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="armed" :min="0" :max="100">
                     </div>
                     <div v-if="showParachute">
-                        <q-circular-progress class="q-ml-xs" show-value :value="parachute" size="49px" :thickness="0.25" color="parachute"  center-color="grey-10" :max="2"><q-icon name="fas fa-parachute-box" size="18.5px" color="white"/>
-                        <q-circular-progress class="q-ml-xs" style="opacity: 30%; bottom: 34px; left: -19px;" :value="static" size="49px" :thickness="0.25" color="parachute" :min="0" :max="100">
+                        <q-circular-progress class="q-ml-xs" show-value :value="parachute" size="49px" :thickness="0.25" color="parachute"  center-color="grey-10" :max="2"><q-icon style="top: 0px;" name="fas fa-parachute-box" size="23px" color="white"/>
+                        <q-circular-progress class="q-ml-xs" style="position: absolute; opacity: 30%; bottom: -13px; left: -17px;" :value="static" size="49px" :thickness="0.25" color="parachute" :min="0" :max="100">
                     </div>
                     <div v-if="showEngine">
                         <q-circular-progress class="q-ml-xs" show-value :value="engine" size="49px" :thickness="0.25" :style="{color: engineColor}"  center-color="grey-10"><q-icon name="fas fa-oil-can" size="19.5px" color="white"/>
