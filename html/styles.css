@@ -2,8 +2,6 @@
 @import url('https://fonts.cdnfonts.com/css/pricedown');
 
 .text-health { color: rgb(33, 171, 97) !important; }
-.text-armor { color: rgb(50, 109, 191) !important; }
-.text-armor-bg { color: rgb(255, 0, 0) !important; }
 .text-stress { color: rgb(255, 0, 0) !important; }
 .text-nos { color: rgb(255, 72, 133) !important; }
 .text-cruise { color: rgb(255, 72, 133) !important; }
