@@ -1,6 +1,7 @@
 Config = {}
 
 Config.dynamicHealth = true -- True or false, set to false if you want it persistent
+Config.dynamicArmor = true -- True or false, set to false if you want it persistent
 Config.dynamicHunger = true -- True or false, set to false if you want it persistent
 Config.dynamicThirst = true -- True or false, set to false if you want it persistent
 Config.dynamicStress = true -- True or false, set to false if you want it persistent
