@@ -26,13 +26,29 @@
   right: 2vw;
   top: 2vh;
   font-weight: 400;
-  font-size: 48px;
+  font-size: 40px;
 }
 
 #sign {
   font-family: 'Pricedown Bl', sans-serif;
   text-align: right;
-  color: #00d02a;
+  color: #00ac31;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
+}
+
+#plus {
+  font-size: 50px;
+  font-family: 'Pricedown Bl', sans-serif;
+  text-align: right;
+  color: #00ac31;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
+}
+
+#minus {
+  font-size: 50px;
+  font-family: 'Pricedown Bl', sans-serif;
+  text-align: right;
+  color: #ac0000;
   text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
 }
 
@@ -46,37 +62,25 @@
 #bank {
   font-family: 'Pricedown Bl', sans-serif;
   text-align: right;
-  color: #00d02a;
+  color: #00ac31;
   text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
-}
-
-#money-minus {
-  font-family: 'Pricedown Bl', sans-serif;
-  text-align: right;
-  color: red;
-}
-
-#cash,
-#bank,
-#plus {
-  font-family: 'Pricedown Bl', sans-serif;
-  color: #00d02a;
-}
-
-#minus {
-  font-family: 'Pricedown Bl', sans-serif;
-  color: red;
 }
 
 /* Player HUD */
 
+#ui-container {
+  position: absolute;
+  left: 3vh;
+  bottom: 0.2vw;
+
+}
+
 #playerhud {
   display: flex;
-  position: absolute;
-  bottom: 0.3vw;
-  left: 1.5vh;
-  transform: scale(1, 1); /* Change this to rescale player ui */
-  overflow: hidden!important;
+}
+
+.q-ml-xl {
+  margin-left: -23.7px!important; /* Change this to space radials */
 }
 
 /* Vehicle HUD */
@@ -94,11 +98,16 @@
   position: absolute;
 }
 
-.ui-car-container {
+.ui-car-keeptogether {
   position: fixed;
   bottom: -7vh;
   left: -1vh;
-  transform: scale(1.1, 1.1); /* Change this to rescale car ui */
+  transform: scale(1.13, 1.13); /* Change this to rescale car ui */
+}
+
+.ui-car-seatbelt {
+  left: 19.1vw;
+  bottom: 3.56vw;
 }
 
 .ui-car-speed {
@@ -134,26 +143,6 @@
   z-index: -10;
 }
 
-.ui-car-seatbelt {
-  left: 19.1vw;
-  bottom: 3.56vw;
-}
-
-/* Animation */
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
-
 .border {
   bottom: 7.9%;
   left: 1.3%;
@@ -180,4 +169,19 @@
   position: absolute;
   display: inline-block;
   border-radius: 50%;
+}
+
+/* Animation */
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
