@@ -2,6 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 local config = Config
 local dynamicHealth = false
+local dynamicArmor = false
 local dynamicHunger = false
 local dynamicThirst = false
 local dynamicStress = false
@@ -120,7 +121,7 @@ local function IsWhitelistedWeaponArmed(weapon)
     return false
 end
 
-local prevPlayerStats = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
+local prevPlayerStats = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil }
 
 local function updatePlayerHud(data)
     local shouldUpdate = false
@@ -136,33 +137,34 @@ local function updatePlayerHud(data)
             action = 'hudtick',
             show = data[1],
             dynamicHealth = data[2],
-            dynamicHunger = data[3],
-            dynamicThirst = data[4],
-            dynamicStress = data[5],
-            dynamicOxygen = data[6],
-            dynamicEngine = data[7],
-            dynamicNitro = data[8],
-            health = data[9],
-            playerDead = data[10],
-            armor = data[11],
-            thirst = data[12],
-            hunger = data[13],
-            stress = data[14],
-            voice = data[15],
-            radio = data[16],
-            talking = data[17],
-            armed = data[18],
-            oxygen = data[19],
-            parachute = data[20],
-            nos = data[21],
-            cruise = data[22],
-            nitroActive = data[23],
-            harness = data[24],
-            hp = data[25],
-            speed = data[26],
-            engine = data[27],
-            cinematic = data[28],
-            dev = data[29],
+            dynamicArmor = data[3],
+            dynamicHunger = data[4],
+            dynamicThirst = data[5],
+            dynamicStress = data[6],
+            dynamicOxygen = data[7],
+            dynamicEngine = data[8],
+            dynamicNitro = data[9],
+            health = data[10],
+            playerDead = data[11],
+            armor = data[12],
+            thirst = data[13],
+            hunger = data[14],
+            stress = data[15],
+            voice = data[16],
+            radio = data[17],
+            talking = data[18],
+            armed = data[19],
+            oxygen = data[20],
+            parachute = data[21],
+            nos = data[22],
+            cruise = data[23],
+            nitroActive = data[24],
+            harness = data[25],
+            hp = data[26],
+            speed = data[27],
+            engine = data[28],
+            cinematic = data[29],
+            dev = data[30],
         })
     end
 end
@@ -219,6 +221,11 @@ CreateThread(function()
                 dynamicHealth  = true
             else
                 dynamicHealth = false
+            end
+            if config.dynamicArmor == true then
+                dynamicArmor  = true
+            else
+                dynamicArmor = false
             end
             if config.dynamicHunger == true then
                 dynamicHunger  = true
@@ -286,6 +293,7 @@ CreateThread(function()
             updatePlayerHud({
                 show, 
                 dynamicHealth,
+                dynamicArmor,
                 dynamicHunger,
                 dynamicThirst,
                 dynamicStress,
@@ -337,6 +345,7 @@ CreateThread(function()
                 updatePlayerHud({
                     show, 
                     dynamicHealth,
+                    dynamicArmor,
                     dynamicHunger,
                     dynamicThirst,
                     dynamicStress,
