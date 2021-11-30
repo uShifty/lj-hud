@@ -101,7 +101,7 @@
 .ui-car-keeptogether {
   position: fixed;
   bottom: -7vh;
-  left: -1vh;
+  left: -2vh;
   transform: scale(1.13, 1.13); /* Change this to rescale car ui */
 }
 
