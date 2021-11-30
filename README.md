@@ -91,6 +91,9 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.1
+* Revised radials added more spacing
+* Separated icons from radials
+* CSS changes on money and colors
 * CSS changes on stress and parachute
 * Added dynamic armor
 * Fixed map not displaying while idle in vehicle
