@@ -447,6 +447,8 @@ const vehHud = {
       }
       if (data.isPaused === 1) {
         this.show = false;
+        this.showSquare = false;
+        this.showCircle = false;
       }
     },
   },
