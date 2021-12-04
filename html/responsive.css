@@ -2,6 +2,53 @@
   position: absolute!important;
 }
 
+@media (min-width: 800px) {
+  .responsive {
+    margin-left: 32vh!important;
+    transform: scale(1, 1);
+    bottom: 6.9vh!important;
+  }
+  #speedometer {
+    position: relative;
+    left: 2.5vh!important;
+  }
+  #fuelgauge {
+    position: relative;
+    left: 7vh!important;
+    bottom: 6.7vh!important;
+  }
+  #altitudegauge {
+    position: relative;
+    left: 11vh!important;
+  }
+  #seatbelt {
+    position: relative;
+    left: 8.5vh!important;
+  }
+  speed {
+    font-size: 2vh!important;
+  }
+  speed:after {
+    font-size: 0.9vh!important;
+  }
+  altitude {
+    font-size: 2vh!important;
+  }
+  altitude:after {
+    font-size: 0.9vh!important;
+  }
+  .square {
+    left: 2.5vh!important;
+    bottom: 6%! important;
+
+  }
+  .circle {
+    left: 3.2vh!important;
+      width: 27.6vh!important;
+      bottom: 6.9%!important;
+  }
+}
+
 @media (width: 3440px) and (height: 1440px) {
   .responsive {
     margin-left: 65vh!important;
