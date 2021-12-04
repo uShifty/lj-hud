@@ -1,0 +1,221 @@
+@media (min-width: 3440px) and (max-width: 3440px) {
+  .responsive {
+    display: block!important;
+    position: absolute!important;
+    left: -16vh!important;
+    bottom: 7vh!important;
+  }
+  .responsiveSeatbelt {
+    position: absolute!important;
+    left: 70.8vh!important;
+    bottom: 9vh!important;
+  }
+  #speedometer {
+    position: absolute;
+    margin-left: 82vh!important;
+  }
+  #fuelgauge {
+    position: absolute;
+    margin-left: 85.8vh!important;
+    bottom: 2.8vw!important;
+  }
+  #altitudegauge {
+    position: absolute;
+    margin-left: 88.4vh!important;
+  }
+  speed {
+    font-size: 1.4vh!important;
+  }
+  altitude {
+    font-size: 1.4vh!important;
+  }
+  speed:after {
+    display: block;
+    padding-top: 5px;
+    padding-left: 1px;
+    font-size: 0.8vh!important;
+    font-weight: 900;
+  }
+  altitude:after {
+    display: block;
+    padding-top: 8px;
+    padding-left: 1px;
+    font-size: 0.8vh!important;
+    font-weight: 900;
+  }
+  .square {
+    left: 33.42vh!important;
+    bottom: 6.5%! important;
+	  width: 29.6vh! important;
+  }
+  .circle {
+    left: 34.5vh!important;
+	  width: 27.6vh!important;
+	  bottom: 7.3%!important;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 2560px) {
+  .responsive {
+    display: block!important;
+    position: absolute!important;
+    left: -16vh!important;
+    bottom: 7vh!important;
+  }
+  .responsiveSeatbelt {
+    position: absolute!important;
+    left: 40vh!important;
+    bottom: 9vh!important;
+  }
+  #speedometer {
+    position: absolute;
+    margin-left: 50.8vh!important;
+  }
+  #fuelgauge {
+    position: absolute;
+    margin-left: 54.3vh!important;
+    bottom: 3.7vw!important;
+  }
+  #altitudegauge {
+    position: absolute;
+    margin-left: 58vh!important;
+  }
+  speed {
+    font-size: 1.4vh!important;
+  }
+  altitude {
+    font-size: 1.4vh!important;
+  }
+  speed:after {
+    display: block;
+    padding-top: 5px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-size: 0.8vh!important;
+    font-weight: 900;
+  }
+  altitude:after {
+    display: block;
+    padding-top: 8px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-size: 0.8vh!important;
+    font-weight: 900;
+  }
+  .square {
+    left: 35px!important;
+    bottom: 6.20%!important;
+  }
+  .circle {
+    left: 55px!important;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 1920px) {
+  .responsive {
+    display: block!important;
+    position: absolute!important;
+    left: -16vh!important;
+    bottom: 7vh!important;
+  }
+  .responsiveSeatbelt {
+    position: absolute!important;
+    left: 42vh!important;
+    bottom: 10vh!important;
+  }
+  #speedometer {
+    position: absolute;
+    margin-left: 50.8vh!important;
+  }
+  #fuelgauge {
+    position: absolute;
+    margin-left: 55.5vh!important;
+    bottom: 3.8vw!important;
+  }
+  #altitudegauge {
+    position: absolute;
+    margin-left: 59.2vh!important;
+  }
+  speed {
+    font-size: 2vh!important;
+  }
+  altitude {
+    font-size: 2vh!important;
+  }
+  speed:after {
+    display: block;
+    padding-top: 5px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-size: 1vh!important;
+    font-weight: 900;
+  }
+  altitude:after {
+    display: block;
+    padding-top: 10px;
+    padding-left: 1px;
+    padding-right: 2px;
+    font-size: 1vh!important;
+    font-weight: 900;
+  }
+  .square {
+    left: 28px!important;
+	  bottom: 6.30%!important;
+  }
+  .circle {
+    left: 41px!important;
+	  bottom: 6.9%!important;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1600px) {
+  .responsive {
+    display: block!important;
+    position: absolute!important;
+    left: -16vh!important;
+    bottom: 7vh!important;
+  }
+  .responsiveSeatbelt {
+    position: absolute!important;
+    left: 43vh!important;
+    bottom: 10vh!important;
+  }
+  #speedometer {
+    position: absolute;
+    margin-left: 50.8vh!important;
+  }
+  #fuelgauge {
+    position: absolute;
+    margin-left: 56.5vh!important;
+    bottom: 3.75vw!important;
+  }
+  #altitudegauge {
+    position: absolute;
+    margin-left: 61vh!important;
+  }
+  speed {
+    font-size: 2.4vh!important;
+  }
+  altitude {
+    font-size: 2.4vh!important;
+  }
+  speed:after {
+    display: block;
+    padding-top: 5px;
+    font-size: 1vh!important;
+    font-weight: 900;
+  }
+  altitude:after {
+    display: block;
+    padding-top: 10px;
+    padding-left: 1px;
+    font-size: 1vh!important;
+    font-weight: 900;
+  }
+  .square {
+    left: 24px!important;
+  }
+  .circle {
+    left: 35px!important;
+  }
+}
