@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'lj-hud'
-version '1.1'
+version '1.2'
 author 'github.com/loljoshie'
 
 client_script 'config.lua'
@@ -15,5 +15,6 @@ ui_page 'html/index.html'
 files {
 	'html/index.html',
 	'html/styles.css',
+	'html/responsive.css',
 	'html/app.js',
 }
