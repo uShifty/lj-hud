@@ -378,6 +378,9 @@ app.mount("#ui-container");
 const vehHud = {
   data() {
     return {
+      speedometer: 66,
+      fuelgauge: 69,
+      altitudegauge: 75,
       fuel: 0,
       speed: 0,
       seatbelt: 0,
@@ -406,7 +409,7 @@ const vehHud = {
       this.show = data.show;
       this.speed = data.speed;
       this.altitude = data.altitude;
-      this.fuel = (data.fuel * 0.67);
+      this.fuel = (data.fuel * 0.71);
       this.showSeatbelt = data.showSeatbelt;
       this.showAltitude = data.showAltitude;
       this.showSquareB = data.showSquareB;
@@ -447,8 +450,6 @@ const vehHud = {
       }
       if (data.isPaused === 1) {
         this.show = false;
-        this.showSquare = false;
-        this.showCircle = false;
       }
     },
   },
