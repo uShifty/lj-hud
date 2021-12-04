@@ -10,6 +10,7 @@
 .text-oxygen { color: rgb(138, 168, 189) !important; }
 .text-parachute { color: rgb(0, 0, 0) !important; }
 .text-dev { color: rgb(0, 0, 0) !important; }
+.text-gauge { color: rgb(255, 255, 255) !important; }
 
 * {
   font-family: 'Arial', sans-serif;
@@ -29,7 +30,7 @@
   font-size: 40px;
 }
 
-#sign {
+#sign, #bank {
   font-family: 'Pricedown Bl', sans-serif;
   text-align: right;
   color: #00ac31;
@@ -59,24 +60,13 @@
   text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
 }
 
-#bank {
-  font-family: 'Pricedown Bl', sans-serif;
-  text-align: right;
-  color: #00ac31;
-  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
-}
-
 /* Player HUD */
 
-#ui-container {
+#playerhud {
   position: absolute;
+  display: flex;
   left: 3vh;
   bottom: 0.2vw;
-
-}
-
-#playerhud {
-  display: flex;
 }
 
 .q-ml-xl {
@@ -85,62 +75,31 @@
 
 /* Vehicle HUD */
 
-.ui-car-fuel,
-.ui-car-altitude,
-.ui-car-nos,
-.ui-car-seatbelt,
-.ui-car-cruise,
-.ui-car-speed,
-.ui-car-speed-bg,
-.ui-car-fuel-bg,
-.ui-car-altitude-bg,
-.ui-car-street {
-  position: absolute;
+speed:after {
+  content: "MPH"; /* If using KPH change this content from MPH */
 }
 
-.ui-car-keeptogether {
-  position: fixed;
-  bottom: -7vh;
-  left: -2vh;
-  transform: scale(1.13, 1.13); /* Change this to rescale car ui */
+altitude:after {
+  content: "ALT";
 }
 
-.ui-car-seatbelt {
-  left: 19.1vw;
-  bottom: 3.56vw;
+speed {
+  transform: rotate(150deg);
+  padding-bottom: 6px;
+  position: fixed; 
+  color: #fff; 
+  text-align: center;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); 
 }
 
-.ui-car-speed {
-  bottom: 12.9vh;
-  left: 17.11vw;
-}
-
-.ui-car-speed-bg {
-  bottom: 11vh;
-  left: 16.1vw;
-  z-index: -1;
-}
-
-.ui-car-fuel {
-  left: 34.4vh;
-  bottom: 12.2vh;
-}
-
-.ui-car-fuel-bg {
-  left: 33.6vh;
-  bottom: 11.4vh;
-  z-index: -10;
-}
-
-.ui-car-altitude {
-  bottom: 12.9vh;
-  left: 21.35vw;
-}
-
-.ui-car-altitude-bg {
-  bottom: 11vh;
-  left: 20.3vw;
-  z-index: -10;
+altitude {
+  transform: rotate(135deg);
+  position: fixed; 
+  color: #fff; 
+  text-align: center;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); 
 }
 
 .border {
@@ -152,7 +111,6 @@
 
 .square {
   bottom: 6.30%;
-  left: 28px;
   width: 29vh;
   height: 18.5vh;
   border: 4px solid #bababa;
@@ -162,7 +120,6 @@
 
 .circle {
   bottom: 6.9%;
-  left: 41px;
   width: 27vh;
   height: 22.9vh;
   border: 4px solid #bababa;
