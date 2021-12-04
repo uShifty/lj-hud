@@ -1,7 +1,7 @@
 ![LJ HUD](https://user-images.githubusercontent.com/91661118/143670558-cbd7b923-1fbe-4ac1-86f5-72c518937b85.png)
 
 # 🎅🎄🎁 lj-hud used with QBCore Framework 🍪🦌🤶
-# [ULTRAWIDE SUPPORT NOW ADDED!] 2560 x 1440 | 3440 x 1400
+![ultrawide-support](https://user-images.githubusercontent.com/91661118/144727215-6d2cd8a1-04a4-4667-b350-5571b40efd92.png)
 
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
@@ -11,6 +11,7 @@ Improved off of the newest QBCore hud. Written in Vue.js
 <br>
 Runs at ~ 0.02 to 0.8 ms if you have more optimization suggestions feel free to reach out
 
+In collaboration with [OnlyCats](https://github.com/onlycats) who handled the majority of the javascript and assisted with expanding UltraWide support along with other miscellaneous tasks 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
 * [pma-voice](https://github.com/AvarianKnight/pma-voice)
@@ -21,6 +22,7 @@ Runs at ~ 0.02 to 0.8 ms if you have more optimization suggestions feel free to 
 * [**[QBCore] lj-hud - Video Installation Guide**](https://youtu.be/_StJooDVGC8)
 
 # Installation
+* **IMPORTANT: Recommended that have the default safezone size set found in Settings/Display/"Restore Defaults"**
 * **IMPORTANT: If you're using [lj-fuel](https://github.com/loljoshie/lj-fuel) you NEED to change LegacyFuel exports**
 
 ## qb-smallresources
@@ -36,7 +38,8 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 ![lj-compass](https://user-images.githubusercontent.com/91661118/138012961-163ec6b3-7885-4df6-84a5-efd84aeac696.png)
 
 # Key Features
-* ULTRAWIDE SUPPORT! (2560 x 1440 | 3440 x 1440)
+* More resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
+* ULTRAWIDE SUPPORT! (3440 x 1440 | 2560 x 1440)
 * Toggle engine on and off
 * Harness mode (harness radial shows when you have the harness item and checks for uses left which updates on the radial)
 * Armed mode (weapons specifically whitelisted to not show armed mode)
@@ -94,6 +97,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.2
+* Added more resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
 * Added UltraWide support
 * Added responsive CSS file
 * Reworked car gauges with a new method
