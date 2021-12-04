@@ -1,13 +1,15 @@
 ![LJ HUD](https://user-images.githubusercontent.com/91661118/143670558-cbd7b923-1fbe-4ac1-86f5-72c518937b85.png)
 
 # 🎅🎄🎁 lj-hud used with QBCore Framework 🍪🦌🤶
+# [ULTRAWIDE SUPPORT NOW ADDED!] 2560 x 1440 | 3440 x 1400
+
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
 https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
 
 Improved off of the newest QBCore hud. Written in Vue.js
 <br>
-Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to reach out
+Runs at ~ 0.02 to 0.8 ms if you have more optimization suggestions feel free to reach out
 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
@@ -34,6 +36,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 ![lj-compass](https://user-images.githubusercontent.com/91661118/138012961-163ec6b3-7885-4df6-84a5-efd84aeac696.png)
 
 # Key Features
+* ULTRAWIDE SUPPORT! (2560 x 1440 | 3440 x 1440)
 * Toggle engine on and off
 * Harness mode (harness radial shows when you have the harness item and checks for uses left which updates on the radial)
 * Armed mode (weapons specifically whitelisted to not show armed mode)
@@ -90,6 +93,16 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 
 # Change Logs
 
+### 1.2
+* Added UltraWide support
+* Added responsive CSS file
+* Reworked car gauges with a new method
+* Fixed parachute value
+* Fixed cruise control not capturing speed value
+* Cleaned CSS
+* Cleaned HTML
+* Added more optimization
+
 ### 1.1
 * Revised radials added more spacing
 * Separated icons from radials
@@ -103,8 +116,9 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 ### 1.0
 * Initial release
 
-# Credit
+# Credits
 * GhzGarage for original qb-hud [original version](https://github.com/qbcore-framework/qb-hud)
+* [MonkeyWhisper](https://github.com/MonkeyWhisper) for testing UltraWide support with his community ❤️
 
 # Issues and Suggestions
 Please use the GitHub issues system to report issues or make suggestions, when making suggestion, please keep [Suggestion] in the title to make it clear that it is a suggestion.
