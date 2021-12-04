@@ -1,6 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="responsive.css"/>
         <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
@@ -69,7 +71,7 @@
                     </div>
                     <div v-if="showParachute">
                         <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" size="53px" :thickness="0.24" color="parachute" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="parachute" size="53px" :thickness="0.24" color="parachute" :min="0" :max="100" center-color="grey-10">
+                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="parachute" size="53px" :thickness="0.24" color="parachute" :min="0" :max="2" center-color="grey-10">
                         <q-icon name="fas fa-parachute-box" size="27px" color="white"/>
                     </div>
                     <div v-if="showEngine">
@@ -84,7 +86,7 @@
                     </div>
                     <div v-if="showCruise">
                         <q-circular-progress class="q-ml-xl" style="opacity: 40%;" :value="static" size="53px" :thickness="0.24" color="cruise" :min="0" :max="100"></q-circular-progress>
-                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="cruise" size="53px" :thickness="0.24" color="cruise" :min="0" :max="100" center-color="grey-10">
+                        <q-circular-progress class="q-ml-xl" style="left: -50%;" show-value :value="speed" size="53px" :thickness="0.24" color="cruise" :min="0" :max="100" center-color="grey-10">
                         <q-icon name="fas fa-tachometer-alt-fast" size="22px" color="white"/>
                     </div>
                     <div v-if="showNos">
@@ -98,48 +100,34 @@
                         <q-icon name="fas fa-terminal" size="22px" color="white"/>
                     </div>
                 </div>
-            </div>  
+            </div>
             <div id="veh-container">
                 <div v-show="show">
-                    <div class="ui-car-addons">
-                    <div class="ui-car-keeptogether">
-                    <div class="ui-car-seatbelt" v-if="showSeatbelt">
-                       <q-icon name="fas fa-user-slash" style="bottom: 93px; left: 50px;" :value="seatbelt" size="20px" :style="{color: seatbeltColor}"/>
-                    </div>                        
-                    <div class="ui-car-speed">
-                        <q-circular-progress :angle="216" font-size="0.4em" style="text-align: center;" show-value :value="speed" class="text-white" size="60px" :thickness="0.218" color="white" track-color="transparent" center-color="transparent" z-max="10":max="500">
-                            <pre style="line-height: 0.25;"> <div style ="text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); margin-top: -4px; font-weight: 700; font-size: 19px;"> {{speed}} </div>
-                            <div style="text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); font-weight: 900; font-size: 10.5px;">MPH</div></pre>
-                        </q-circular-progress>
+                    <div class="responsiveSeatbelt" v-if="showSeatbelt">
+                        <q-icon name="fas fa-user-slash" :value="seatbelt" size="24px" :style="{color: seatbeltColor}"/>
+                     </div>    
+                    <div class="responsive" id="speedometer">
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-150deg); opacity: 60%;" :value="speedometer" size="70px" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-150deg); left: -50%;" show-value :value="speed" size="70px" :thickness="0.21" color="gauge" :min="10" :max="600">
+                        <speed>{{(speed)}}</speed>
                     </div>
-                    <div class="ui-car-speed-bg">
-                    <svg width='100' height='100'><circle cx='50' cy='50' r='27'stroke='white' stroke-opacity="50%" stroke-width='6' fill='transparent' stroke-dasharray="200 60" stroke-dashoffset="200"/></svg>
+                    <div class="responsive" id="fuelgauge">
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-125deg); opacity: 60%;" :value="fuelgauge" size="35px" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-125deg); left: -50%;" show-value :value="fuel" size="35px" :thickness="0.21" :style="{color: fuelColor}" :min="0" :max="100">
+                        <q-icon name="fas fa-gas-pump" style="position: fixed; transform: rotate(125deg); transform-origin: 47% 50%;" size="15px" color="white"/>
                     </div>
-                    <div class="ui-car-fuel">
-                        <q-circular-progress  :angle="240" show-value :value="fuel" size="32px" :thickness="0.22" :style="{color: fuelColor}" track-color="transparent" center-color="transparent" z-max="10"><q-icon name="fas fa-gas-pump" style="margin-left: 2px;" size="15px" color="white">
+                    <div class="responsive" id="altitudegauge" v-if="showAltitude">
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-135deg); opacity: 60%;" :value="altitudegauge" size="70px" :thickness="0.21" color="gauge" :min="0" :max="100"></q-circular-progress>
+                        <q-circular-progress class="q-ml-xl" style="transform: rotate(-135deg); left: -50%;" show-value :value="altitude" size="70px" :thickness="0.21" color="gauge" :min="0" :max="750">
+                        <altitude>{{(altitude)}}</altitude>
                     </div>
-                    <div class="ui-car-fuel-bg">
-                        <svg width='50' height='50'><circle cx='25' cy='25' r='14.4' stroke='white' stroke-opacity="50%" stroke-width='3.2' fill='transparent' stroke-dasharray="200 30" stroke-dashoffset="192.6"/>                    </svg>
-                    </div>
-                   
-                    <div class="ui-car-altitude" v-if="showAltitude">
-                        <q-circular-progress :angle="228" font-size="0.4em" style="text-align: center;" show-value :value="altitude" class="text-white" size="60px" :thickness="0.218" color="white" track-color="transparent" center-color="transparent" z-max="10":max="750">
-                            <pre style="line-height: 0.365;"> <div style ="text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); margin-top: -2.5px; font-weight: 700; font-size: 19px;"> {{altitude}} </div>
-                            <div style="text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7); font-weight: 900; font-size: 10.5px;">ALT</div></pre>
-                        </q-circular-progress>
-                    </div>
-                    <div class="ui-car-altitude-bg" v-if="showAltitude">
-                        <svg width='100' height='100'><circle cx='50' cy='50' r='27' stroke='white' stroke-opacity="50%" stroke-width='6' fill='transparent' stroke-dasharray="200 45" stroke-dashoffset="180"/></svg>
-                    </div>
-                </div>
-                </div> 
-                </div>
-                    <div class="border">
-                        <div class="square" v-if="showSquare">
-                    </div>
-                    <div class="border">
-                        <div class="circle" v-if="showCircle">
-                    </div>
+            <div class="border">
+                <div class="square" v-if="showSquare">
             </div>
+            <div class="border">
+                <div class="circle" v-if="showCircle">
+            </div>
+            </div>
+        </div>
     </body>
 </html>
