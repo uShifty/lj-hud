@@ -1,5 +1,5 @@
 .responsive {
-  position: absolute!important;
+    position: absolute!important;
 }
 
 @media (min-width: 800px) {
@@ -39,13 +39,13 @@
   }
   .square {
     left: 2.5vh!important;
-    bottom: 6%! important;
+    bottom: 6%!important;
 
   }
   .circle {
     left: 3.2vh!important;
-      width: 27.6vh!important;
-      bottom: 6.9%!important;
+    width: 27.6vh!important;
+    bottom: 6.9%!important;
   }
 }
 
@@ -86,8 +86,8 @@
   }
   .square {
     left: 33.9vh!important;
-    bottom: 6.1%! important;
-	  width: 29.3vh! important;
+    bottom: 6.1%!important;
+	  width: 29.3vh!important;
   }
   .circle {
     left: 35vh!important;
@@ -133,7 +133,7 @@
   }
   .square {
     left: 2.5vh!important;
-    bottom: 6%! important;
+    bottom: 6%!important;
   }
   .circle {
     left: 3.4vh!important;
@@ -225,7 +225,7 @@
   }
   .square {
     left: 2.2vh!important;
-    bottom: 6%! important;
+    bottom: 6%!important;
   }
   .circle {
     left: 3.2vh!important;
@@ -271,7 +271,7 @@
   }
   .square {
     left: 2.5vh!important;
-    bottom: 6%! important;
+    bottom: 6%!important;
   }
   .circle {
     left: 3.2vh!important;
@@ -317,7 +317,7 @@
   }
   .square {
     left: 2.5vh!important;
-    bottom: 6%! important;
+    bottom: 6%!important;
   }
   .circle {
     left: 4vh!important;
