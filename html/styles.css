@@ -127,6 +127,9 @@ altitude {
 }
 
 .circle {
+  bottom: 6.9%;
+  width: 27vh;
+  height: 22.9vh;
   border: 4px solid #bababa;
   position: absolute;
   display: inline-block;
