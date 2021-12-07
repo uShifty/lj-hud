@@ -27,9 +27,6 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who handled the ma
 
 ![lj-compass](https://user-images.githubusercontent.com/91661118/138012961-163ec6b3-7885-4df6-84a5-efd84aeac696.png)
 
-# Video Guide Installation
-* [**[QBCore] lj-hud - Video Installation Guide**](https://youtu.be/_StJooDVGC8)
-
 # Installation
 * **IMPORTANT: Recommended that have the default safezone size set found in Settings/Display/"Restore Defaults"**
 * **IMPORTANT: If you're using [lj-fuel](https://github.com/loljoshie/lj-fuel) you NEED to change LegacyFuel exports**
