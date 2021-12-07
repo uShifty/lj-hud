@@ -49,24 +49,31 @@ RegisterNUICallback('restartHud', function()
     Wait(50)
     TriggerEvent("hud:client:playResetHudSounds")
     TriggerEvent('QBCore:Notify', "Resetting Hud!", "error")
+    if IsPedInAnyVehicle(PlayerPedId()) then
+        Wait(2600)
+        SendNUIMessage({ action = 'car', show = false })
+        SendNUIMessage({ action = 'car', show = true })
+    end
     Wait(2600)
     SendNUIMessage({ action = 'hudtick', show = false })
-    SendNUIMessage({ action = 'car', show = false })
-    Wait(2600)
     SendNUIMessage({ action = 'hudtick', show = true })
-    SendNUIMessage({ action = 'car', show = true })
+    Wait(2600)
+    parachute = -1
     TriggerEvent('QBCore:Notify', "Hud has been reset!", "success")
+
 end) 
 
 RegisterCommand('resethud', function()
     Wait(50)
     TriggerEvent('QBCore:Notify', "Resetting Hud!", "error")
     Wait(2600)
+    if IsPedInAnyVehicle(PlayerPedId()) then
+        SendNUIMessage({ action = 'car', show = false })
+        SendNUIMessage({ action = 'car', show = true })
+    end
     SendNUIMessage({ action = 'hudtick', show = false })
-    SendNUIMessage({ action = 'car', show = false })
-    Wait(2600)
     SendNUIMessage({ action = 'hudtick', show = true })
-    SendNUIMessage({ action = 'car', show = true })
+    Wait(2600)
     TriggerEvent('QBCore:Notify', "Hud has been reset!", "success")
 end)
 
@@ -145,22 +152,6 @@ RegisterNetEvent("hud:client:showFuelAlert", function()
     Wait(50)
     showFuelAlert = not showFuelAlert
     TriggerEvent("hud:client:playHudChecklistSound")
-end)
-
-RegisterNUICallback('hideReticle', function()
-    Wait(50)
-    TriggerEvent("hud:client:hideReticle")
-end) 
-
-RegisterNetEvent("hud:client:hideReticle", function()
-    Wait(50)
-    hideReticle = not hideReticle
-    TriggerEvent("hud:client:playHudChecklistSound")
-    if hideReticle then
-    HideHudComponentThisFrame(14)
-    else 
-    ShowHudComponentThisFrame(14)
-    end
 end)
 
 RegisterNUICallback('showCinematicNotif', function()
