@@ -58,7 +58,6 @@ RegisterNUICallback('restartHud', function()
     SendNUIMessage({ action = 'hudtick', show = false })
     SendNUIMessage({ action = 'hudtick', show = true })
     Wait(2600)
-    parachute = -1
     TriggerEvent('QBCore:Notify', "Hud has been reset!", "success")
 
 end) 
@@ -66,11 +65,12 @@ end)
 RegisterCommand('resethud', function()
     Wait(50)
     TriggerEvent('QBCore:Notify', "Resetting Hud!", "error")
-    Wait(2600)
     if IsPedInAnyVehicle(PlayerPedId()) then
+        Wait(2600)
         SendNUIMessage({ action = 'car', show = false })
         SendNUIMessage({ action = 'car', show = true })
     end
+    Wait(2600)
     SendNUIMessage({ action = 'hudtick', show = false })
     SendNUIMessage({ action = 'hudtick', show = true })
     Wait(2600)
