@@ -11,12 +11,21 @@ Improved off of the newest QBCore hud. Written in Vue.js
 <br>
 Runs at ~ 0.02 to 0.8 ms if you have more optimization suggestions feel free to reach out
 
-In collaboration with [OnlyCats](https://github.com/onlycats) who handled the majority of the javascript and assisted with expanding UltraWide support along with other miscellaneous tasks 
+In collaboration with [OnlyCats](https://github.com/onlycats) who handled the majority of the javascript, helped make lj-menu, expanding UltraWide support along with various other miscellaneous tasks
 # Dependencies
-* [qbcore framework](https://github.com/qbcore-framework)
-* [pma-voice](https://github.com/AvarianKnight/pma-voice)
-* [qb-radio](https://github.com/qbcore-framework/qb-radio)
+* [lj-menu](https://github.com/loljoshie/lj-menu) **there are no more configurations. It's all handled through lj-menu 🙌**
+
+![lj-menu](https://user-images.githubusercontent.com/91661118/144958755-678e6659-fd0b-4d93-8fed-300f94d21ed7.PNG)
+* [qbcore framework](https://github.com/qbcore-framework) 
+* [interact-sound](https://github.com/qbcore-framework/interact-sound) (if you want sound effects)
+* [pma-voice](https://github.com/AvarianKnight/pma-voice) 
+* [qb-radio](https://github.com/qbcore-framework/qb-radio) 
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
+
+# Recommended 
+* [lj-compass](https://github.com/loljoshie/lj-compass) **this is specific version is made for lj-menu compatibility, if you want the standalone version** [lj-compass-old](https://github.com/loljoshie/lj-compass-old)
+
+![lj-compass](https://user-images.githubusercontent.com/91661118/138012961-163ec6b3-7885-4df6-84a5-efd84aeac696.png)
 
 # Video Guide Installation
 * [**[QBCore] lj-hud - Video Installation Guide**](https://youtu.be/_StJooDVGC8)
@@ -32,12 +41,8 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who handled the ma
 TriggerEvent('hud:client:UpdateHarness', harnessHp)
 ```
 
-# My Compass
-* Compass was made standalone to reduce (ms) on hud https://github.com/loljoshie/lj-compass
-
-![lj-compass](https://user-images.githubusercontent.com/91661118/138012961-163ec6b3-7885-4df6-84a5-efd84aeac696.png)
-
 # Key Features
+* lj-menu now handles all configuration in game
 * More resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
 * ULTRAWIDE SUPPORT! (3440 x 1440 | 2560 x 1440)
 * Toggle engine on and off
@@ -61,8 +66,8 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 #
 
 # Previews
-### config / dynamic settings
-![config](https://user-images.githubusercontent.com/91661118/143668588-9f99203e-d292-4aff-b6f7-5a742c0f7350.PNG)
+### config / dynamic settings handled through lj-menu
+![lj-menu close](https://user-images.githubusercontent.com/91661118/144960465-3a0162d8-f5f6-4f91-95de-a9931c92c10f.PNG)
 ### dead health
 ![dead](https://user-images.githubusercontent.com/91661118/143668617-3f41913f-506e-4c40-bc97-99c0e02eaec6.png)
 ### engine health
@@ -95,6 +100,14 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 ![all radials](https://user-images.githubusercontent.com/91661118/143668930-e9475c53-284c-4054-ad9c-88aa98f76768.png)
 
 # Change Logs
+
+### 1.5
+* Added lj-menu compatibility
+* Removed all configuration
+* Cleaned CSS
+* Cleaned HTML
+* Added more optimization (got it down from 0.015 to now 0.08 while outside of vehicle)
+* Fixed circle map alignment for 1920 x 1080
 
 ### 1.2
 * Added more resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
