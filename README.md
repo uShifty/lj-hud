@@ -20,7 +20,7 @@ In collaboration with [OnlyCats](https://github.com/onlycats) who handled the ma
 * [interact-sound](https://github.com/qbcore-framework/interact-sound) (if you want sound effects)
 * [pma-voice](https://github.com/AvarianKnight/pma-voice) 
 * [qb-radio](https://github.com/qbcore-framework/qb-radio) 
-* [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
+* [LegacyFuel](https://github.com/qbcore-framework/LegacyFuel)
 
 # Recommended 
 * [lj-compass](https://github.com/loljoshie/lj-compass) **this is specific version is made for lj-menu compatibility, if you want the standalone version** [lj-compass-old](https://github.com/loljoshie/lj-compass-old)
