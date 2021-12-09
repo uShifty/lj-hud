@@ -40,8 +40,8 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 
 # Key Features
 * lj-menu now handles all configuration in game
-* More resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
-* ULTRAWIDE SUPPORT! (3440 x 1440 | 2560 x 1440)
+* More resolutions supported (2560 x 1440 | 1920 x 1440 | 1920 x 1200 | 1280 x 720)
+* ULTRAWIDE SUPPORT! (3440 x 1440)
 * Toggle engine on and off
 * Harness mode (harness radial shows when you have the harness item and checks for uses left which updates on the radial)
 * Armed mode (weapons specifically whitelisted to not show armed mode)
@@ -107,7 +107,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 * Fixed circle map alignment for 1920 x 1080
 
 ### 1.2
-* Added more resolutions supported (1920 x 1440 | 1920 x 1200 | 1280 x 720)
+* Added more resolutions supported (2560 x 1440 | 1920 x 1440 | 1920 x 1200 | 1280 x 720)
 * Added UltraWide support
 * Added responsive CSS file
 * Reworked car gauges with a new method
