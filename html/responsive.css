@@ -245,8 +245,8 @@
   }
   #fuelgauge {
     position: relative;
-    left: 7vh!important;
-    bottom: 6.7vh!important;
+    left: 7.2vh!important;
+    bottom: 6.6vh!important;
   }
   #altitudegauge {
     position: relative;
@@ -260,7 +260,7 @@
     font-size: 2vh!important;
   }
   speed:after {
-    font-size: 0.9vh!important;
+    font-size: 1.1vh!important;
   }
   altitude {
     font-size: 2vh!important;
