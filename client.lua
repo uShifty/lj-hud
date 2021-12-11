@@ -242,7 +242,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
     if map == "square" then 
         RequestStreamedTextureDict("squaremap", false)
         if not HasStreamedTextureDictLoaded("squaremap") then
-            Wait(500)
+            Wait(50)
         end
         if showMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Square map loading...')
@@ -266,7 +266,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
             SetBlipAlpha(GetNorthRadarBlip(), 0)
             SetRadarBigmapEnabled(true, false)
             SetMinimapClipType(0)
-            Wait(500)
+            Wait(50)
             SetRadarBigmapEnabled(false, false)
         if showMapBorders == true then
             showCircleB = false
@@ -279,7 +279,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
         elseif map == "circle" then 
             RequestStreamedTextureDict("circlemap", false)
             if not HasStreamedTextureDictLoaded("circlemap") then
-                Wait(500)
+                Wait(50)
             end
             if showMapNotif == true then
                 TriggerEvent('QBCore:Notify', 'Circle map loading...')
@@ -303,7 +303,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
                 SetBlipAlpha(GetNorthRadarBlip(), 0)
                 SetMinimapClipType(1)
                 SetRadarBigmapEnabled(true, false)
-                Wait(500)
+                Wait(50)
                 SetRadarBigmapEnabled(false, false)
                 if showMapBorders == true then
                     showSquareB = false
@@ -578,7 +578,7 @@ end
 CreateThread(function()
     local wasInVehicle = false;
     while true do
-        Wait(50)
+        Wait(1000) -- change to Wait(50) if you want instant value of speed updated (not recommended because of high performance usage 0.10 - 0.18)
         if LocalPlayer.state.isLoggedIn then
             local show = true
             local player = PlayerPedId()
@@ -648,7 +648,6 @@ CreateThread(function()
                 -1,
                 cinematic,
                 dev,
-
             }) 
             end
             -- vehcle hud
@@ -715,9 +714,6 @@ CreateThread(function()
                 })
                 showAltitude = false
                 showSeatbelt = true
-                Wait(500)
-                SetRadarZoom(1000)
-                SetRadarBigmapEnabled(false, false)
             else
                 if wasInVehicle then
                     wasInVehicle = false
@@ -739,7 +735,6 @@ CreateThread(function()
                 show = false
             })
             DisplayRadar(false)
-            Wait(500)
         end
     end
 end)
@@ -755,7 +750,6 @@ CreateThread(function()
                         TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
                         TriggerEvent('QBCore:Notify', "Low Fuel!", "error")
                         Wait(60000) -- repeats every 1 min until empty
-                    else
                     end
                 end
             end
@@ -840,7 +834,7 @@ CreateThread(function() -- Shooting
                     end
                 end
             else
-                Wait(500)
+                Wait(1000)
             end
         end
         Wait(8)
@@ -863,7 +857,7 @@ CreateThread(function()
                 SetPedToRagdollWithFall(ped, RagdollTimeout, RagdollTimeout, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
             end
 
-            Wait(500)
+            Wait(1000)
             for i=1, FallRepeat, 1 do
                 Wait(750)
                 DoScreenFadeOut(200)
@@ -902,6 +896,16 @@ function GetEffectInterval(stresslevel)
     end
     return retval
 end
+
+-- minimap update
+Citizen.CreateThread(function()
+    while true do
+        Wait(500)
+        local player = PlayerPedId()
+        SetRadarZoom(1000)
+        SetRadarBigmapEnabled(false, false)
+    end
+end)
 
 -- cinematic mode
 CinematicHeight = 0.2
