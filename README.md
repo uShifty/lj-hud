@@ -9,7 +9,7 @@ https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
 
 Improved off of the newest QBCore hud. Written in Vue.js
 <br>
-Runs at ~ 0.02 to 0.8 ms if you have more optimization suggestions feel free to reach out
+Runs at ~ 0.01 to 0.03 ms if you have more optimization suggestions feel free to reach out
 
 In collaboration with [OnlyCats](https://github.com/onlycats) who handled the majority of the javascript, helped make lj-menu, expanding UltraWide support along with various other miscellaneous tasks
 # Dependencies
@@ -99,12 +99,13 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.5
+* More minor CSS changes
+* Massive performance enhancements
 * Added smoother transitions
 * Added lj-menu compatibility
 * Removed all configuration
 * Cleaned CSS
 * Cleaned HTML
-* Added more optimization (got it down from 0.015 to now 0.08 while outside of vehicle)
 * Fixed circle map alignment for 1920 x 1080
 
 ### 1.2
