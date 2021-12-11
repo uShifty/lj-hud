@@ -99,6 +99,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.5
+* Added smoother transitions
 * Added lj-menu compatibility
 * Removed all configuration
 * Cleaned CSS
