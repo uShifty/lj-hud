@@ -78,8 +78,8 @@
 speed:after {
   content: "MPH"; /* If using KPH change this content from MPH */
   display: block;
-  padding-top: 3px;
-  padding-bottom: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   font-weight: 900;
 }
 
@@ -148,5 +148,15 @@ altitude {
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(20px);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
