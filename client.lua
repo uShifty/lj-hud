@@ -27,6 +27,7 @@ local playerDead = false
 local checklistSounds = true
 local openMenuSounds = true
 local resetHudSounds = true
+local showOutMap = false
 local showMapNotif = true
 local showFuelAlert = true
 local showCinematicNotif = true
@@ -38,10 +39,11 @@ local dynamicStress = true
 local dynamicOxygen = true
 local dynamicEngine = true
 local dynamicNitro = true
+local changeFPS = true
+DisplayRadar(false)
 local map = "circle"
 local hideMap = false
 local showMapBorders = true
-
 -- lj-menu Callbacks & Events
 
 -- reset hud
@@ -130,6 +132,17 @@ RegisterNetEvent("hud:client:playHudChecklistSound", function()
     if checklistSounds == true then
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "lock", 0.5)
     end
+end)
+
+RegisterNUICallback('showOutMap', function()
+    Wait(50)
+    TriggerEvent("hud:client:showOutMap")
+end) 
+
+RegisterNetEvent("hud:client:showOutMap", function()
+    Wait(50)
+    showOutMap = not showOutMap
+    TriggerEvent("hud:client:playHudChecklistSound")
 end)
 
 RegisterNUICallback('showMapNotif', function()
@@ -222,16 +235,28 @@ RegisterNUICallback('dynamicStress', function()
 end) 
 
 RegisterNUICallback('dynamicOxygen', function()
+    Wait(50)
     TriggerEvent("hud:client:ToggleOxygen")
+    TriggerEvent("hud:client:playHudChecklistSound")
 end)   
 
 RegisterNetEvent("hud:client:ToggleOxygen", function()
     Wait(50)
     dynamicOxygen = not dynamicOxygen
-    TriggerEvent("hud:client:playHudChecklistSound")
 end)
 
 -- vehicle
+RegisterNUICallback('changeFPS', function()
+    Wait(50)
+    TriggerEvent("hud:client:changeFPS")
+    TriggerEvent("hud:client:playHudChecklistSound")
+end)   
+
+RegisterNetEvent("hud:client:changeFPS", function()
+    Wait(50)
+    changeFPS = not changeFPS
+end)
+
 RegisterNUICallback('HideMap', function()
     Wait(50)
     TriggerEvent("hud:client:HideMap")
@@ -578,7 +603,11 @@ end
 CreateThread(function()
     local wasInVehicle = false;
     while true do
-        Wait(1000) -- change to Wait(50) if you want instant value of speed updated (not recommended because of high performance usage 0.10 - 0.18)
+        if changeFPS == true then
+            Wait(1000)
+        elseif changeFPS == false then
+            Wait(50)
+        end
         if LocalPlayer.state.isLoggedIn then
             local show = true
             local player = PlayerPedId()
@@ -727,14 +756,17 @@ CreateThread(function()
                     cruiseOn = false
                     harness = false
                 end
-                DisplayRadar(false)
+                if showOutMap == false then
+                    DisplayRadar(false)
+                else
+                    DisplayRadar(true)
+                end
             end
         else
             SendNUIMessage({
                 action = 'hudtick',
                 show = false
             })
-            DisplayRadar(false)
         end
     end
 end)
