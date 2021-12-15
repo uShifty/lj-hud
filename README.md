@@ -99,6 +99,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.6
+* Changed radials smaller on default
 * Added speedometer fps lj-menu
 * Added minimap outside vehicle lj-menu
 
