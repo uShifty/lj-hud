@@ -264,6 +264,15 @@ end)
 
 RegisterNetEvent("hud:client:LoadMap", function()
     Wait(50)
+    -- Credit to Dalrae for the solve.
+    local defaultAspectRatio = 1920/1080 -- Don't change this.
+    local resolutionX, resolutionY = GetActiveScreenResolution()
+    local aspectRatio = resolutionX/resolutionY
+    local minimapOffset = 0
+    if aspectRatio > defaultAspectRatio then
+        minimapOffset = ((defaultAspectRatio-aspectRatio)/3.6)-0.008
+    end
+
     if map == "square" then 
         RequestStreamedTextureDict("squaremap", false)
         if not HasStreamedTextureDictLoaded("squaremap") then
@@ -278,16 +287,16 @@ RegisterNetEvent("hud:client:LoadMap", function()
             -- 0.0 = nav symbol and icons left 
             -- 0.1638 = nav symbol and icons stretched
             -- 0.216 = nav symbol and icons raised up
-            SetMinimapComponentPosition("minimap", "L", "B", 0.0, -0.047, 0.1638, 0.183)
+            SetMinimapComponentPosition("minimap", "L", "B", 0.0+minimapOffset, -0.047, 0.1638, 0.183)
     
             -- icons within map
-            SetMinimapComponentPosition("minimap_mask", "L", "B", 0.2, 0.0, 0.065, 0.20)
+            SetMinimapComponentPosition("minimap_mask", "L", "B", 0.2+minimapOffset, 0.0, 0.065, 0.20)
     
             -- -0.01 = map pulled left
             -- 0.025 = map raised up
             -- 0.262 = map stretched
             -- 0.315 = map shorten
-            SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.01, 0.025, 0.262, 0.300)
+            SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.01+minimapOffset, 0.025, 0.262, 0.300)
             SetBlipAlpha(GetNorthRadarBlip(), 0)
             SetRadarBigmapEnabled(true, false)
             SetMinimapClipType(0)
@@ -315,16 +324,16 @@ RegisterNetEvent("hud:client:LoadMap", function()
                 -- -0.0100 = nav symbol and icons left 
                 -- 0.180 = nav symbol and icons stretched
                 -- 0.258 = nav symbol and icons raised up
-                SetMinimapComponentPosition("minimap", "L", "B", -0.0100, -0.030, 0.180, 0.258)
+                SetMinimapComponentPosition("minimap", "L", "B", -0.0100+minimapOffset, -0.030, 0.180, 0.258)
     
                 -- icons within map
-                SetMinimapComponentPosition("minimap_mask", "L", "B", 0.200, 0.0, 0.065, 0.20)
+                SetMinimapComponentPosition("minimap_mask", "L", "B", 0.200+minimapOffset, 0.0, 0.065, 0.20)
     
                 -- -0.00 = map pulled left
                 -- 0.015 = map raised up
                 -- 0.252 = map stretched
                 -- 0.338 = map shorten
-                SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.00, 0.015, 0.252, 0.338)
+                SetMinimapComponentPosition('minimap_blur', 'L', 'B', -0.00+minimapOffset, 0.015, 0.252, 0.338)
                 SetBlipAlpha(GetNorthRadarBlip(), 0)
                 SetMinimapClipType(1)
                 SetRadarBigmapEnabled(true, false)
@@ -439,11 +448,6 @@ RegisterNetEvent("hud:client:ToggleCinematic", function()
 
 end)
 
--- lj-hud events
-RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
-    Wait(100)
-    TriggerEvent("hud:client:LoadMap")
-end)
 
 RegisterNetEvent("hud:client:EngineHealth", function(newEngine)
     engine = newEngine
@@ -602,6 +606,7 @@ end
 
 CreateThread(function()
     local wasInVehicle = false;
+    local mapLoaded = false
     while true do
         if changeFPS == true then
             Wait(1000)
@@ -609,11 +614,14 @@ CreateThread(function()
             Wait(50)
         end
         if LocalPlayer.state.isLoggedIn then
-            local show = true
+            local show = true  
             local player = PlayerPedId()
             local weapon = GetSelectedPedWeapon(player)
             -- player hud
-
+            if not mapLoaded then
+                TriggerEvent("hud:client:LoadMap") 
+                mapLoaded=true
+            end
             if not IsWhitelistedWeaponArmed(weapon) then
                 if weapon ~= `WEAPON_UNARMED` then
                     armed = true
