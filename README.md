@@ -99,6 +99,7 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 # Change Logs
 
 ### 1.7
+* Added support for 4k resolution 3840 x 2160
 * Added support for UltraWide resolution 2560 x 1080
 * Added UltraWide minimap anchor (Took inspiration from googleoblivion)
 * Fixed minimap load on login
