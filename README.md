@@ -98,10 +98,18 @@ TriggerEvent('hud:client:UpdateHarness', harnessHp)
 
 # Change Logs
 
+### 1.7
+* Added support for UltraWide resolution 2560 x 1080
+* Added UltraWide minimap anchor (Took inspiration from googleoblivion)
+* Fixed minimap load on login
+
 ### 1.6
 * Changed radials smaller on default
 * Added speedometer fps lj-menu
 * Added minimap outside vehicle lj-menu
+* Added support for UltraWide resolution 2560 x 1080
+* Addedd UltraWide minimap anchor
+* 
 
 ### 1.5
 * More minor CSS changes
