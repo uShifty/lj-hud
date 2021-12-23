@@ -12,6 +12,9 @@ Improved off of the newest QBCore hud. Written in Vue.js
 Runs at ~ 0.01 to 0.03 ms if you have more optimization suggestions feel free to reach out
 
 In collaboration with [OnlyCats](https://github.com/onlycats) who handled the majority of the javascript, helped make lj-menu, expanding UltraWide support along with various other miscellaneous tasks
+
+⚠️ **If you are looking to use this hud with older versions of QBCore you can find that version [HERE](https://github.com/uShifty/lj-hud)** ⚠️
+
 # Dependencies
 * [lj-menu](https://github.com/loljoshie/lj-menu) **there are no more configurations. It's all handled through lj-menu 🙌**
 
