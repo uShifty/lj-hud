@@ -1,4 +1,12 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = nil
+local isLoggedIn = false
+
+CreateThread(function()
+    while QBCore == nil do
+        TriggerEvent("QBCore:GetObject", function(obj)QBCore = obj end)
+        Wait(200)
+    end
+end)
 
 -- lj-hud
 local config = Config
@@ -45,6 +53,16 @@ local map = "circle"
 local hideMap = false
 local showMapBorders = true
 -- lj-menu Callbacks & Events
+
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+    isLoggedIn = true
+end)
+
+AddEventHandler('onResourceStart', function (resourceName)
+    if(GetCurrentResourceName() == resourceName) then
+        isLoggedIn = true
+    end
+end)
 
 -- reset hud
 RegisterNUICallback('restartHud', function()
@@ -613,7 +631,7 @@ CreateThread(function()
         elseif changeFPS == false then
             Wait(50)
         end
-        if LocalPlayer.state.isLoggedIn then
+        if isLoggedIn then
             local show = true  
             local player = PlayerPedId()
             local weapon = GetSelectedPedWeapon(player)
@@ -782,7 +800,7 @@ end)
 -- low fuel
 CreateThread(function()
     while true do
-        if LocalPlayer.state.isLoggedIn then
+        if isLoggedIn then
             local ped = PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
                 if exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false)) <= 20 then -- At 20% Fuel Left
@@ -837,7 +855,7 @@ end)
 
 CreateThread(function() -- Speeding
     while true do
-        if LocalPlayer.state.isLoggedIn then
+        if isLoggedIn then
             local ped = PlayerPedId()
             if IsPedInAnyVehicle(ped, false) then
                 local speed = GetEntitySpeed(GetVehiclePedIsIn(ped, false)) * speedMultiplier
@@ -864,7 +882,7 @@ end
 
 CreateThread(function() -- Shooting
     while true do
-        if LocalPlayer.state.isLoggedIn then
+        if isLoggedIn then
             local ped = PlayerPedId()
             local weapon = GetSelectedPedWeapon(ped)
             if weapon ~= `WEAPON_UNARMED` then

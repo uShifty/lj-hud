@@ -1,5 +1,5 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
+local QBCore = nil
+TriggerEvent("QBCore:GetObject", function(obj)QBCore = obj end)
 local ResetStress = false
 
 QBCore.Commands.Add('cash', 'Check Cash Balance', {}, false, function(source, args)
