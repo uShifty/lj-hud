@@ -44,6 +44,17 @@ DisplayRadar(false)
 local map = "circle"
 local hideMap = false
 local showMapBorders = true
+
+RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
+    Wait(2000)
+    TriggerEvent("hud:client:LoadMap") 
+end)
+
+AddEventHandler('onResourceStart', function()
+    Wait(2000)
+    TriggerEvent("hud:client:LoadMap") 
+end)
+
 -- lj-menu Callbacks & Events
 
 -- reset hud
@@ -606,7 +617,6 @@ end
 
 CreateThread(function()
     local wasInVehicle = false;
-    local mapLoaded = false
     while true do
         if changeFPS == true then
             Wait(1000)
@@ -618,10 +628,6 @@ CreateThread(function()
             local player = PlayerPedId()
             local weapon = GetSelectedPedWeapon(player)
             -- player hud
-            if not mapLoaded then
-                TriggerEvent("hud:client:LoadMap") 
-                mapLoaded=true
-            end
             if not IsWhitelistedWeaponArmed(weapon) then
                 if weapon ~= `WEAPON_UNARMED` then
                     armed = true
