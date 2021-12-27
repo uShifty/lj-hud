@@ -50,9 +50,11 @@ RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
     TriggerEvent("hud:client:LoadMap") 
 end)
 
-AddEventHandler('onResourceStart', function()
-    Wait(2000)
-    TriggerEvent("hud:client:LoadMap") 
+AddEventHandler('onResourceStart', function(resourceName)
+    if GetCurrentResourceName() == resourceName then
+        Wait(2000)
+        TriggerEvent("hud:client:LoadMap")
+    end
 end)
 
 -- lj-menu Callbacks & Events
