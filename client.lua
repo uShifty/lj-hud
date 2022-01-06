@@ -7,6 +7,7 @@ local seatbeltOn = false
 local cruiseOn = false
 local showAltitude = false
 local showSeatbelt = false
+local voice = 0
 local nos = 0
 local stress = 0
 local hunger = 100
@@ -289,7 +290,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
     if map == "square" then 
         RequestStreamedTextureDict("squaremap", false)
         if not HasStreamedTextureDictLoaded("squaremap") then
-            Wait(50)
+            Wait(150)
         end
         if showMapNotif == true then
             TriggerEvent('QBCore:Notify', 'Square map loading...')
@@ -326,7 +327,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
         elseif map == "circle" then 
             RequestStreamedTextureDict("circlemap", false)
             if not HasStreamedTextureDictLoaded("circlemap") then
-                Wait(50)
+                Wait(150)
             end
             if showMapNotif == true then
                 TriggerEvent('QBCore:Notify', 'Circle map loading...')
@@ -387,6 +388,7 @@ RegisterNetEvent("hud:client:ToggleMapShape", function()
     else 
         map = "circle"
     end
+    Wait(50)
     TriggerEvent("hud:client:LoadMap")   
     end 
     TriggerEvent("hud:client:playHudChecklistSound")
@@ -518,7 +520,6 @@ end)
 
 RegisterKeyMapping('+engine', 'Toggle Engine', 'keyboard', 'G')
 
-
 local function IsWhitelistedWeaponArmed(weapon)
     if weapon ~= nil then
         for _, v in pairs(config.WhitelistedWeaponArmed) do
@@ -621,7 +622,7 @@ CreateThread(function()
     local wasInVehicle = false;
     while true do
         if changeFPS == true then
-            Wait(1000)
+            Wait(500)
         elseif changeFPS == false then
             Wait(50)
         end
@@ -959,6 +960,7 @@ end)
 CinematicHeight = 0.2
 CinematicModeOn = false
 w = 0
+
 function CinematicShow(bool)
     SetRadarBigmapEnabled(true, false)
     Wait(0)
@@ -975,6 +977,7 @@ function CinematicShow(bool)
         end
     end
 end
+
 Citizen.CreateThread(function()
     minimap = RequestScaleformMovie("minimap")
     if not HasScaleformMovieLoaded(minimap) then
@@ -999,6 +1002,7 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
 function BlackBars()
     DrawRect(0.0, 0.0, 2.0, w, 0, 0, 0, 255)
     DrawRect(0.0, 1.0, 2.0, w, 0, 0, 0, 255)
