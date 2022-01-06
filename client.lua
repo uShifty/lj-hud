@@ -7,6 +7,7 @@ local seatbeltOn = false
 local cruiseOn = false
 local showAltitude = false
 local showSeatbelt = false
+local voice = 0
 local nos = 0
 local stress = 0
 local hunger = 100
